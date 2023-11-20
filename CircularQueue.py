@@ -17,6 +17,12 @@ class CircularQueue :
             self.array[self.rear] = item                  #그위치에 요소 저장
         else: pass
 
+    def dequeue( self):
+        if not self.isEmpty():
+            self.front = (self.front + 1) % self.capacity
+            return self.array[self.front]
+        else: pass
+
     def peek( self ):                                     #픽 셀프값
         if not self.isEmpty():                            #엠티상태에 작동안함
             return self.array[(self.front + 1) % self.capacity] #어레이 때 프론트+1 값 반환
